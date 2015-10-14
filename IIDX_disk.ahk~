@@ -45,6 +45,10 @@ If(Abs( nx - oldx ) > Sensitivity)
 	isSpaceDown := True
 	MouseMove, ox, ny+1-2*(ny > oy), 0
 }
+/*
+If(Abs( ny - oldy ) > Sensitivity)
+	MouseMove, nx+1-2*(nx > ox), oy, 0
+*/
 
 ;If mouse stop
 If(Abs( nx - oldx ) <=  Sensitivity && isSpaceDown == True)
@@ -56,8 +60,28 @@ If(Abs( nx - oldx ) <=  Sensitivity && isSpaceDown == True)
 	lRotate := False
 		
 }
+	;oldx := nx
+	;oldy := ny
+
 
 
   return
 
+/*
+
+#IfWinExist, Mouse to Keys On
+
+	LButton::z
+
+	MButton::x
+
+	RButton::c
+
+	XButton1::space
+
+	XButton2::LAlt
+
+#IfWinExist
+
+*/
 F8:: ExitApp
